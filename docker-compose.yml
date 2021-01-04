@@ -69,6 +69,20 @@ services:
     depends_on:
       - elasticsearch
 
+  s3-local:
+    image: minio/minio:latest
+    ports:
+      - 9000:9000
+    networks:
+      - elk
+    volumes:
+      - ./data/minio/data:/export
+      - ./data/minio/config:/root/.minio
+    environment:
+      MINIO_ACCESS_KEY: user
+      MINIO_SECRET_KEY: freehongkong8964
+    command: server /export 
+
 networks:
   elk:
     driver: bridge
