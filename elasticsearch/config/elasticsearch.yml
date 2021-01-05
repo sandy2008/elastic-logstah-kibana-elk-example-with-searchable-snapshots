@@ -11,6 +11,5 @@ network.host: 0.0.0.0
 xpack.license.self_generated.type: trial
 xpack.security.enabled: true
 xpack.monitoring.collection.enabled: true
-allow.insecure.settings: true
 path.repo: 
     - /var/tmp/es
