@@ -8,5 +8,30 @@ ELK_VERSION=7.10.1 docker-compose up
 ```
 ## S3 Repo Creation
 ```
-http://127.0.0.1:9200/_snapshot/my_minio_repository
+http://127.0.0.1:9200/_snapshot/s3
 ```
+- Body
+```
+{ 
+    "type": "s3", 
+    "settings": { 
+        "bucket": "data", 
+        "region": "us-east-1", 
+        "endpoint": "http://172.25.0.2:9000",  
+        "access_key": "user", 
+        "secret_key": "freehongkong8964", 
+        "protocol": "http" 
+    }
+ }
+ ```
+
+ ## Filesystem Repo Creation
+ ```
+{
+  "type": "fs",
+  "settings": {
+    "location": "/var/tmp/es",
+    "compress": true
+  }
+}
+ ```
