@@ -6,6 +6,7 @@ The Elastic stack (ELK) &amp; tests with searchable snapshots powered by Docker 
 ELK_VERSION=7.10.1 docker-compose build
 ELK_VERSION=7.10.1 docker-compose up
 ```
+
 ## S3 Repo Creation
 ```
 http://127.0.0.1:9200/_snapshot/s3
@@ -34,4 +35,9 @@ http://127.0.0.1:9200/_snapshot/s3
     "compress": true
   }
 }
+ ```
+
+ ## Count File Size
+ ```
+ du -ach ./data/
  ```
